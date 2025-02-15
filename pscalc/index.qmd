@@ -1,0 +1,20 @@
+# Pengantar {.unnumbered}
+
+Selamat datang di PSCalc, sebuah sistem pengelolaan pengetahuan (knowledge management system, KMS) sebagai hasil proses belajar mata kuliah II-2211 Probabilitas dan Statistika.
+
+Dokumen html ini hasil rendering Quarto dari file sumber quarto markdownn .qmd.
+
+
+
+
+Tim Penyusun
+Kelompok X
+
+1. Nama (NIM), github name
+2. Nama (NIM), github name
+3. Nama (NIM), github name
+dst
+
+
+
+To learn more about Quarto books visit <https://quarto.org/docs/books>.
