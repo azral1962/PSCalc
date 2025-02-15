@@ -1,0 +1,2 @@
+# PSCalc
+ Kalkulaator ProbStat
