@@ -2,31 +2,101 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Pscalc",
+    "title": "Pscalc: KMS untuk Probabilitas dan Statistika",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.",
+    "text": "Pengantar\nSelamat datang di PSCalc, sebuah sistem pengelolaan pengetahuan (knowledge management system, KMS) sebagai hasil proses belajar mata kuliah II-2211 Probabilitas dan Statistika.\nDokumen html ini hasil rendering Quarto dari file sumber quarto markdownn .qmd.\nTim Penyusun Kelompok X\n\nNama (NIM), github name\nNama (NIM), github name\nNama (NIM), github name dst\n\nTo learn more about Quarto books visit https://quarto.org/docs/books.",
     "crumbs": [
-      "Preface"
+      "Pengantar"
     ]
   },
   {
     "objectID": "intro.html",
     "href": "intro.html",
-    "title": "1  Introduction",
+    "title": "1  Pendahuluan",
     "section": "",
     "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Pendahuluan</span>"
+    ]
+  },
+  {
+    "objectID": "ps1/index.html",
+    "href": "ps1/index.html",
+    "title": "2  Kerangka Kerja Probabilitas",
+    "section": "",
+    "text": "2.1 Soal 1: Ruang Sampel Eksperimen\nTentukan ruang sampel dari eksperimen berikut:",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Kerangka Kerja Probabilitas</span>"
+    ]
+  },
+  {
+    "objectID": "ps1/index.html#soal-1-ruang-sampel-eksperimen",
+    "href": "ps1/index.html#soal-1-ruang-sampel-eksperimen",
+    "title": "2  Kerangka Kerja Probabilitas",
+    "section": "",
+    "text": "Sebuah paket data dikirimkan melalui jaringan hingga berhasil diterima tanpa kesalahan.\nSistem komunikasi digital mengirimkan sinyal antara tegangan +5V dan -5V.\nPengujian papan sirkuit dengan kemungkinan lulus atau gagal uji. Jika gagal, ditentukan jenis cacatnya dari enam kemungkinan.\nWaktu yang dibutuhkan benda jatuh ke tanah setelah dilempar ke udara.\nDalam penyimpanan data optik, pembacaan dilakukan hingga empat kali sebelum sistem memutuskan kegagalan. Gambarkan ruang sampel dengan diagram pohon.\n\n\n2.1.1 Prinsip yang Digunakan:\n\nRuang sampel adalah himpunan semua kemungkinan hasil dari suatu eksperimen.\nUntuk kasus diskrit, ruang sampel terdiri dari sejumlah elemen yang bisa dihitung.\nUntuk kasus kontinu, ruang sampel terdiri dari rentang nilai.\n\n\n\n2.1.2 Pola Berpikir:\n\nIdentifikasi kejadian utama dalam eksperimen.\nTentukan apakah hasil eksperimen bersifat diskrit atau kontinu.\nJika diskrit, buat daftar kemungkinan hasil.\nJika kontinu, tentukan batas rentang nilai yang mungkin.\nJika perlu, gunakan diagram pohon untuk memvisualisasikan hasil percobaan yang berulang.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Kerangka Kerja Probabilitas</span>"
+    ]
+  },
+  {
+    "objectID": "ps1/index.html#jawaban",
+    "href": "ps1/index.html#jawaban",
+    "title": "2  Kerangka Kerja Probabilitas",
+    "section": "2.2 Jawaban:",
+    "text": "2.2 Jawaban:\n(Disertakan jawaban untuk setiap soal dalam bentuk tabel atau diagram sesuai kebutuhan)\n\nimport matplotlib.pyplot as plt\nimport networkx as nx\n\ndef draw_tree():\n    G = nx.DiGraph()\n    edges = [(\"Start\", \"Read 1\"),\n             (\"Read 1\", \"Success\"), (\"Read 1\", \"Read 2\"),\n             (\"Read 2\", \"Success\"), (\"Read 2\", \"Read 3\"),\n             (\"Read 3\", \"Success\"), (\"Read 3\", \"Failure\")]\n    G.add_edges_from(edges)\n    pos = nx.spring_layout(G)\n    nx.draw(G, pos, with_labels=True, node_color='lightblue', edge_color='gray')\n    plt.show()\n\ndraw_tree()",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Kerangka Kerja Probabilitas</span>"
+    ]
+  },
+  {
+    "objectID": "ps1/index.html#soal-2-diagram-venn",
+    "href": "ps1/index.html#soal-2-diagram-venn",
+    "title": "2  Kerangka Kerja Probabilitas",
+    "section": "2.3 Soal 2: Diagram Venn",
+    "text": "2.3 Soal 2: Diagram Venn\nGambarkan diagram Venn untuk tiga kejadian A, B, dan C serta arsirlah daerah yang sesuai untuk kejadian berikut:\n\n\\(A \\cup B\\)\n\\(A \\cap B\\)\n\\(A^c \\cup B\\)\n\\(A \\cap (B \\cup C)\\)\n\n\n2.3.1 Prinsip yang Digunakan:\n\nDiagram Venn digunakan untuk memvisualisasikan hubungan antara himpunan dalam probabilitas.\nOperasi himpunan seperti union (\\(\\cup\\)) dan intersection (\\(\\cap\\)) menunjukkan bagaimana kejadian saling berhubungan.\n\n\n\n2.3.2 Pola Berpikir:\n\nTentukan himpunan yang diberikan dalam soal.\nGunakan operasi himpunan untuk menemukan daerah yang sesuai.\nGunakan diagram Venn untuk membantu visualisasi.\nTandai daerah yang sesuai dengan arsir atau warna.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Kerangka Kerja Probabilitas</span>"
+    ]
+  },
+  {
+    "objectID": "ps1/index.html#jawaban-1",
+    "href": "ps1/index.html#jawaban-1",
+    "title": "2  Kerangka Kerja Probabilitas",
+    "section": "2.4 Jawaban:",
+    "text": "2.4 Jawaban:\n\nfrom matplotlib_venn import venn3\n\ndef draw_venn():\n    venn3(subsets = (1, 1, 1, 1, 1, 1, 1), set_labels=('A', 'B', 'C'))\n    plt.show()\n\ndraw_venn()",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Kerangka Kerja Probabilitas</span>"
+    ]
+  },
+  {
+    "objectID": "ps1/index.html#soal-3-probabilitas-ruang-sampel",
+    "href": "ps1/index.html#soal-3-probabilitas-ruang-sampel",
+    "title": "2  Kerangka Kerja Probabilitas",
+    "section": "2.5 Soal 3: Probabilitas Ruang Sampel",
+    "text": "2.5 Soal 3: Probabilitas Ruang Sampel\nDiketahui ruang sampel \\(S = \\{s_1, s_2, s_3, s_4, s_5\\}\\) dengan probabilitas berturut-turut 0.1, 0.1, 0.2, 0.4, dan 0.2. Jika \\(A = \\{s_1, s_2\\}\\) dan \\(B = \\{s_3, s_4\\}\\), tentukan:\n\n\\(P(A)\\)\n\\(P(B)\\)\n\\(P(A \\cup B)\\)\n\\(P(A \\cap B)\\)\n\\(P(A^c)\\)\n\n\n2.5.1 Prinsip yang Digunakan:\n\nProbabilitas dari suatu kejadian adalah jumlah probabilitas elemen yang termasuk dalam kejadian tersebut.\nProbabilitas komplemen dihitung dengan 1 dikurangi probabilitas kejadian.\nJika dua kejadian tidak memiliki elemen bersama, maka \\(P(A \\cap B) = 0\\).\n\n\n\n2.5.2 Pola Berpikir:\n\nIdentifikasi elemen yang termasuk dalam setiap kejadian.\nJumlahkan probabilitas elemen yang masuk dalam kejadian tersebut.\nGunakan aturan probabilitas dasar untuk menghitung probabilitas lainnya.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Kerangka Kerja Probabilitas</span>"
+    ]
+  },
+  {
+    "objectID": "ps1/index.html#jawaban-2",
+    "href": "ps1/index.html#jawaban-2",
+    "title": "2  Kerangka Kerja Probabilitas",
+    "section": "2.6 Jawaban:",
+    "text": "2.6 Jawaban:\n\nP_S = [0.1, 0.1, 0.2, 0.4, 0.2]\nA = [0.1, 0.1]\nB = [0.2, 0.4]\n\nP_A = sum(A)\nP_B = sum(B)\nP_A_union_B = P_A + P_B\nP_A_intersection_B = 0  # karena A dan B tidak memiliki irisan\nP_A_complement = 1 - P_A\n\nP_A, P_B, P_A_union_B, P_A_intersection_B, P_A_complement\n\n(0.2, 0.6000000000000001, 0.8, 0, 0.8)\n\n\n\nDokumen ini berisi soal-soal yang serupa dengan yang ada dalam Problem Set 1, lengkap dengan prinsip yang digunakan, pola berpikir yang diterapkan, serta jawaban dan implementasi kode Python untuk perhitungan probabilitas dan visualisasi diagram.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Kerangka Kerja Probabilitas</span>"
     ]
   },
   {
     "objectID": "summary.html",
     "href": "summary.html",
-    "title": "2  Summary",
+    "title": "3  Penutup",
     "section": "",
     "text": "In summary, this book has no content whatsoever.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Penutup</span>"
     ]
   },
   {

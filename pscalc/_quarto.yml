@@ -4,11 +4,12 @@ project:
 
 book:
   title: "Pscalc: KMS untuk Probabilitas dan Statistika"
-  author: "Armein Z. R. Langi"
+  author: Tim X"
   date: "2/15/2025"
   chapters:
     - index.qmd
     - intro.qmd
+    - ps1/index.qmd
     - summary.qmd
     - references.qmd
 
